@@ -24,15 +24,16 @@ export default function CurrenciesRate() {
     useEffect(() => {
         const getRates = async(cur) => {
             const res = await axios.get(`https://api.exchangerate.host/timeseries?start_date=${date.startDate}&end_date=${date.endDate}&base=USD&symbols=${cur}`)
-            const rates = await res.data.rates
-
-            //console.log(rates)
-
+            const {rates} = await res.data        
+            console.log(rates)
             const labels = Object.keys(rates)
+            console.log(labels)
             const dataValues = Object.keys(rates).map((e) => {
                 return rates[e][cur]
+
                 // rates."2020-01-01".ILS
             })
+            console.log(dataValues)
             setData({
                 labels: labels, // 39 fechas
                 datasets: [
