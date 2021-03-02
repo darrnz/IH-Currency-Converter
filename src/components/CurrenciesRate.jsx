@@ -58,7 +58,7 @@ export default function CurrenciesRate() {
             ...date,
             [e.target.name]: e.target.value
         })
-        console.log(date)
+
     }
 
     
